@@ -9,7 +9,7 @@ import Foundation
 
 final class TvShowService {
     func fetchTvShows(completion: @escaping ([TvShow]) -> ()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             completion([.previewGameOfThrones, .previewBreakingBad])
         }
     }

@@ -22,14 +22,15 @@ final class EpisodeTimelineProvider: IntentTimelineProvider {
             return completion(context.family == .systemSmall
                 ? TvShowEntry(
                     date: Date(),
-                    configuration: configuration,
+                    configuration: .preview,
                     show: .previewBreakingBad,
-                    nextEpisode: TvShow.previewBreakingBad.nextEpisodes[0]
+                    nextEpisode: TvShow.previewBreakingBad.nextEpisodes[0],
+                    isError: false
                 )
-                : .preview(with: configuration))
+                : .preview(with: .preview))
         }
 
-        if let snapshot = snapshot.first {
+        if let snapshot = snapshot.first, snapshot.show?.id == configuration.tvShow?.identifier {
             return completion(snapshot)
         }
 
@@ -38,7 +39,9 @@ final class EpisodeTimelineProvider: IntentTimelineProvider {
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<TvShowEntry>) -> ()) {
         tvShowService.fetchTvShows { [weak self] tvShows in
-            guard let show = tvShows.first else { return }
+            guard let show = tvShows.first(where: { $0.id == configuration.tvShow?.identifier }) else {
+                return completion(Timeline(entries: [.error(with: configuration)], policy: .after(Date().addingTimeInterval(5 * 60))))
+            }
 
             var entries: [TvShowEntry] = []
             var date = Date()
@@ -49,7 +52,8 @@ final class EpisodeTimelineProvider: IntentTimelineProvider {
                         date: date,
                         configuration: configuration,
                         show: show,
-                        nextEpisode: episode
+                        nextEpisode: episode,
+                        isError: false
                     )
                 )
                 date = episode.releaseDate

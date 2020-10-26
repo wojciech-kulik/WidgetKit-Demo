@@ -14,38 +14,49 @@ struct EpisodeCountdownEntryView : View {
 
     var entry: TvShowEntry
 
-    var body: some View {
+    @ViewBuilder
+    var headerView: some View {
+        Text(entry.show?.title ?? "-")
+            .minimumScaleFactor(0.3)
+            .font(.headline)
+
+        Text((widgetFamily == .systemSmall ? "" : "Next episode: ") +
+            "\(entry.nextEpisode?.number ?? 0) of \(entry.show?.episodesInSeason ?? 0)")
+            .font(.footnote)
+            .foregroundColor(.gray)
+    }
+
+    var posterView: some View {
+        Image(entry.show?.cover ?? "-")
+            .resizable()
+            .scaledToFit()
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .shadow(color: Color.black.opacity(0.2), radius: 3)
+    }
+
+    @ViewBuilder
+    var timerView: some View {
+        Text(entry.nextEpisode?.releaseDate ?? Date(), style: .timer)
+            .minimumScaleFactor(0.3)
+            .foregroundColor(Color.yellow.opacity(0.9))
+            .font(.title)
+
+        if (entry.configuration.hideDate?.boolValue != true) {
+            Text(entry.nextEpisode?.releaseDate ?? Date(), style: .date)
+                .font(.footnote)
+                .foregroundColor(.gray)
+        }
+    }
+
+    var countdownView: some View {
         ZStack {
             HStack(spacing: 24) {
-                if widgetFamily != .systemSmall {
-                    Image(entry.show.cover)
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 6))
-                        .shadow(color: Color.black.opacity(0.2), radius: 3)
-                }
+                if widgetFamily != .systemSmall { posterView }
 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text(entry.show.title)
-                        .minimumScaleFactor(0.3)
-                        .font(.headline)
-
-                    Text((widgetFamily == .systemSmall ? "" : "Next episode: ") +
-                        "\(entry.nextEpisode.number) of \(entry.show.episodesInSeason)")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-
+                    headerView
                     Spacer()
-
-                    Text(entry.nextEpisode.releaseDate, style: .timer)
-                        .minimumScaleFactor(0.3)
-                        .foregroundColor(Color.yellow.opacity(0.9))
-                        .font(.title)
-
-                    Text(entry.nextEpisode.releaseDate, style: .date)
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-
+                    timerView
                     Spacer()
                 }
 
@@ -60,7 +71,28 @@ struct EpisodeCountdownEntryView : View {
             startPoint: .top,
             endPoint: .bottom
         ))
-        .widgetURL(URL(string: "tv://series?id=\(entry.show.id)"))
+        .widgetURL(URL(string: "tv://series?id=\(entry.show?.id ?? "")"))
+    }
+
+    func errorView(message: String) -> some View {
+        ZStack {
+            Color.black.ignoresSafeArea()
+            Text(message)
+                .padding()
+                .multilineTextAlignment(.center)
+        }
+        .foregroundColor(.white)
+    }
+
+    @ViewBuilder
+    var body: some View {
+        if entry.configuration.tvShow == nil {
+            errorView(message: "Select a TV show from widget configuration")
+        } else if entry.isError {
+            errorView(message: "Could not get TV show")
+        } else {
+            countdownView
+        }
     }
 }
 
