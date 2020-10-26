@@ -13,13 +13,14 @@
 		165A0CBE2547334900BCCD7B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165A0CBD2547334900BCCD7B /* Preview Assets.xcassets */; };
 		16A0C05C254734A100AEBA84 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A0C05B254734A000AEBA84 /* WidgetKit.framework */; };
 		16A0C05E254734A100AEBA84 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A0C05D254734A100AEBA84 /* SwiftUI.framework */; };
-		16A0C061254734A100AEBA84 /* SelectedUserWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C060254734A100AEBA84 /* SelectedUserWidget.swift */; };
+		16A0C061254734A100AEBA84 /* EpisodeCountdownWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C060254734A100AEBA84 /* EpisodeCountdownWidget.swift */; };
 		16A0C064254734A100AEBA84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A0C063254734A100AEBA84 /* Assets.xcassets */; };
-		16A0C066254734A100AEBA84 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C062254734A100AEBA84 /* Widgets.intentdefinition */; };
-		16A0C067254734A100AEBA84 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C062254734A100AEBA84 /* Widgets.intentdefinition */; };
+		16A0C066254734A100AEBA84 /* WidgetConfiguration.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C062254734A100AEBA84 /* WidgetConfiguration.intentdefinition */; };
+		16A0C067254734A100AEBA84 /* WidgetConfiguration.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C062254734A100AEBA84 /* WidgetConfiguration.intentdefinition */; };
 		16A0C06A254734A100AEBA84 /* WidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 16A0C059254734A000AEBA84 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		16A0C0772547354300AEBA84 /* UserTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C0712547352500AEBA84 /* UserTimelineProvider.swift */; };
-		16A0C07D2547368200AEBA84 /* UserEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C07C2547368200AEBA84 /* UserEntry.swift */; };
+		16A0C0772547354300AEBA84 /* EpisodeTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C0712547352500AEBA84 /* EpisodeTimelineProvider.swift */; };
+		16A0C07D2547368200AEBA84 /* TvShowEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C07C2547368200AEBA84 /* TvShowEntry.swift */; };
+		16A0C0A325476E4900AEBA84 /* TvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C0A225476E4900AEBA84 /* TvShow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +57,13 @@
 		16A0C059254734A000AEBA84 /* WidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A0C05B254734A000AEBA84 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		16A0C05D254734A100AEBA84 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		16A0C060254734A100AEBA84 /* SelectedUserWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedUserWidget.swift; sourceTree = "<group>"; };
-		16A0C062254734A100AEBA84 /* Widgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Widgets.intentdefinition; sourceTree = "<group>"; };
+		16A0C060254734A100AEBA84 /* EpisodeCountdownWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCountdownWidget.swift; sourceTree = "<group>"; };
+		16A0C062254734A100AEBA84 /* WidgetConfiguration.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = WidgetConfiguration.intentdefinition; sourceTree = "<group>"; };
 		16A0C063254734A100AEBA84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16A0C065254734A100AEBA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16A0C0712547352500AEBA84 /* UserTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTimelineProvider.swift; sourceTree = "<group>"; };
-		16A0C07C2547368200AEBA84 /* UserEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntry.swift; sourceTree = "<group>"; };
+		16A0C0712547352500AEBA84 /* EpisodeTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTimelineProvider.swift; sourceTree = "<group>"; };
+		16A0C07C2547368200AEBA84 /* TvShowEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowEntry.swift; sourceTree = "<group>"; };
+		16A0C0A225476E4900AEBA84 /* TvShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,12 +137,37 @@
 		16A0C05F254734A100AEBA84 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				16A0C07C2547368200AEBA84 /* UserEntry.swift */,
-				16A0C0712547352500AEBA84 /* UserTimelineProvider.swift */,
-				16A0C060254734A100AEBA84 /* SelectedUserWidget.swift */,
-				16A0C062254734A100AEBA84 /* Widgets.intentdefinition */,
+				16A0C0AC2547701900AEBA84 /* Models */,
+				16A0C0AD2547702A00AEBA84 /* Providers */,
+				16A0C0AE2547703700AEBA84 /* Widgets */,
 				16A0C063254734A100AEBA84 /* Assets.xcassets */,
 				16A0C065254734A100AEBA84 /* Info.plist */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		16A0C0AC2547701900AEBA84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				16A0C0A225476E4900AEBA84 /* TvShow.swift */,
+				16A0C07C2547368200AEBA84 /* TvShowEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		16A0C0AD2547702A00AEBA84 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				16A0C0712547352500AEBA84 /* EpisodeTimelineProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		16A0C0AE2547703700AEBA84 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				16A0C062254734A100AEBA84 /* WidgetConfiguration.intentdefinition */,
+				16A0C060254734A100AEBA84 /* EpisodeCountdownWidget.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -246,7 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165A0CB92547334900BCCD7B /* ContentView.swift in Sources */,
-				16A0C067254734A100AEBA84 /* Widgets.intentdefinition in Sources */,
+				16A0C067254734A100AEBA84 /* WidgetConfiguration.intentdefinition in Sources */,
 				165A0CB72547334900BCCD7B /* WidgetKit_DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,10 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16A0C066254734A100AEBA84 /* Widgets.intentdefinition in Sources */,
-				16A0C0772547354300AEBA84 /* UserTimelineProvider.swift in Sources */,
-				16A0C061254734A100AEBA84 /* SelectedUserWidget.swift in Sources */,
-				16A0C07D2547368200AEBA84 /* UserEntry.swift in Sources */,
+				16A0C066254734A100AEBA84 /* WidgetConfiguration.intentdefinition in Sources */,
+				16A0C0772547354300AEBA84 /* EpisodeTimelineProvider.swift in Sources */,
+				16A0C0A325476E4900AEBA84 /* TvShow.swift in Sources */,
+				16A0C061254734A100AEBA84 /* EpisodeCountdownWidget.swift in Sources */,
+				16A0C07D2547368200AEBA84 /* TvShowEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +468,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Widgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,6 +489,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Widgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

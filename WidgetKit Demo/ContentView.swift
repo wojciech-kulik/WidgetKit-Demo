@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var title: String = "Hello"
+
     var body: some View {
-        Circle()
-            .stroke()
-            .trim(from: 0, to: 0.75)
+        Text(title)
+            .onOpenURL { title = $0.absoluteString == "tv://series?id=1" ? "Game of Thrones" : "Breaking Bad" }
     }
 }
 
