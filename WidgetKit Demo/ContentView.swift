@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Circle()
+            .stroke()
+            .trim(from: 0, to: 0.75)
     }
 }
 
