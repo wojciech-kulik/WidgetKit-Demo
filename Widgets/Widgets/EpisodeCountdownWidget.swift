@@ -53,7 +53,6 @@ struct EpisodeCountdownEntryView : View {
             }
             .padding(widgetFamily == .systemSmall ? 16 : 26)
         }
-        .frame(width: .infinity, height: .infinity)
         .foregroundColor(.white)
         .lineLimit(1)
         .background(LinearGradient(

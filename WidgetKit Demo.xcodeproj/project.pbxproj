@@ -11,6 +11,7 @@
 		165A0CB92547334900BCCD7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A0CB82547334900BCCD7B /* ContentView.swift */; };
 		165A0CBB2547334900BCCD7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165A0CBA2547334900BCCD7B /* Assets.xcassets */; };
 		165A0CBE2547334900BCCD7B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165A0CBD2547334900BCCD7B /* Preview Assets.xcassets */; };
+		166DD9BA25478A8600F29132 /* TvShowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DD9B425478A4500F29132 /* TvShowService.swift */; };
 		16A0C05C254734A100AEBA84 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A0C05B254734A000AEBA84 /* WidgetKit.framework */; };
 		16A0C05E254734A100AEBA84 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A0C05D254734A100AEBA84 /* SwiftUI.framework */; };
 		16A0C061254734A100AEBA84 /* EpisodeCountdownWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A0C060254734A100AEBA84 /* EpisodeCountdownWidget.swift */; };
@@ -54,6 +55,7 @@
 		165A0CBA2547334900BCCD7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		165A0CBD2547334900BCCD7B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		165A0CBF2547334900BCCD7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		166DD9B425478A4500F29132 /* TvShowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowService.swift; sourceTree = "<group>"; };
 		16A0C059254734A000AEBA84 /* WidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A0C05B254734A000AEBA84 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		16A0C05D254734A100AEBA84 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				16A0C0712547352500AEBA84 /* EpisodeTimelineProvider.swift */,
+				166DD9B425478A4500F29132 /* TvShowService.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				16A0C0772547354300AEBA84 /* EpisodeTimelineProvider.swift in Sources */,
 				16A0C0A325476E4900AEBA84 /* TvShow.swift in Sources */,
 				16A0C061254734A100AEBA84 /* EpisodeCountdownWidget.swift in Sources */,
+				166DD9BA25478A8600F29132 /* TvShowService.swift in Sources */,
 				16A0C07D2547368200AEBA84 /* TvShowEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
