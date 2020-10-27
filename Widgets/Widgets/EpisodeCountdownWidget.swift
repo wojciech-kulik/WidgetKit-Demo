@@ -17,7 +17,7 @@ struct EpisodeCountdownEntryView : View {
     @ViewBuilder
     var headerView: some View {
         Text(entry.show?.title ?? "-")
-            .minimumScaleFactor(0.3)
+            .minimumScaleFactor(0.5)
             .font(.headline)
 
         Text((widgetFamily == .systemSmall ? "" : "Next episode: ") +
@@ -27,11 +27,9 @@ struct EpisodeCountdownEntryView : View {
     }
 
     var posterView: some View {
-        Image(entry.show?.cover ?? "-")
+        Image(entry.show?.cover ?? "")
             .resizable()
-            .scaledToFit()
-            .clipShape(RoundedRectangle(cornerRadius: 6))
-            .shadow(color: Color.black.opacity(0.2), radius: 3)
+            .frame(width: 120)
     }
 
     @ViewBuilder
@@ -50,7 +48,9 @@ struct EpisodeCountdownEntryView : View {
 
     var countdownView: some View {
         ZStack {
-            HStack(spacing: 24) {
+            Color(white: 0.05, opacity: 1.0).ignoresSafeArea()
+
+            HStack {
                 if widgetFamily != .systemSmall { posterView }
 
                 VStack(alignment: .leading, spacing: 5) {
@@ -59,18 +59,14 @@ struct EpisodeCountdownEntryView : View {
                     timerView
                     Spacer()
                 }
+                .padding(.vertical, 16)
+                .padding(.horizontal, widgetFamily == .systemSmall ? 16 : 24)
 
-                if widgetFamily == .systemMedium { Spacer() }
+                Spacer()
             }
-            .padding(widgetFamily == .systemSmall ? 16 : 26)
         }
         .foregroundColor(.white)
         .lineLimit(1)
-        .background(LinearGradient(
-            gradient: Gradient(colors: [Color.black.opacity(0.86), Color.black]),
-            startPoint: .top,
-            endPoint: .bottom
-        ))
         .widgetURL(URL(string: "tv://series?id=\(entry.show?.id ?? "")"))
     }
 
